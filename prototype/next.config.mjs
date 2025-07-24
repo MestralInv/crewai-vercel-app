@@ -9,13 +9,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@': __dirname,
-    }
-    return config
-  },
+  // Custom webpack alias removed; we now use relative imports instead of @/lib/* path mapping
 }
 
 export default nextConfig
