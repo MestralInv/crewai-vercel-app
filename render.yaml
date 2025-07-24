@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: crewai-backend
+    env: python
+    plan: free
+    buildCommand: cd my_crewai_project && pip install -r requirements.txt
+    startCommand: cd my_crewai_project && python flask_api.py
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL_NAME
+        value: llama3-70b-8192
+      - key: PORT
+        value: 10000 
